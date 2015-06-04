@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script src="src/angular/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="myController">
+    <h1>The simplest add machine</h1>
+    <button ng-click="add()">Add</button>
+    <button ng-click="sub()">Sub</button>
+    <h3>The count: {{ counter}}</h3>
+</div>
+<script>
+    angular.module('myApp', [])
+            .controller('myController', function ($scope) {
+                $scope.counter = 0;
+                $scope.add = function() {
+                    $scope.counter += 1;
+                };
+                $scope.sub = function() {
+                    $scope.counter -= 1;
+                }
+            });
+</script>
+</body>
+</html>

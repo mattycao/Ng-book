@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script src="src/angular/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="myController">
+    <input type="text" ng-model="param" placeholder="Your name"/>
+    <button ng-disabled="!param">Button</button>
+    <input type="text" ng-model="param1" placeholder="Your name"/>
+    <input type="text" ng-readonly="param1" placeholder="{{param1}}"/>
+</div>
+<script>
+    angular.module('myApp', [])
+            .controller('myController', function ($scope) {
+
+            });
+</script>
+</body>
+</html>

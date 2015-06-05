@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script src="src/angular/angular.min.js"></script>
+    <style>
+        .red {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div ng-controller="myController">
+    <div ng-class="{red: x > 5}" ng-if="x > 5">You won!</div>
+    <button ng-click="generate()">
+        Draw Number
+    </button>
+    Number is: {{ x }}
+</div>
+<script>
+    angular.module('myApp', [])
+            .controller('myController', function ($scope) {
+                $scope.x = 0;
+                $scope.generate = function() {
+                    $scope.x =  Math.floor(Math.random() * 10 ) + 1;
+                }
+            });
+</script>
+</body>
+</html>

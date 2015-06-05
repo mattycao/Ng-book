@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script src="src/angular/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="myController">
+    <a ng-href="{{ myhref }}">Luck</a>
+    <br/>
+    <a href="{{ myhref }}">Not Luck</a>
+</div>
+<script>
+    angular.module('myApp', [])
+            .controller('myController', function ($scope, $timeout) {
+                $timeout(function() {
+                    $scope.myhref = 'http://google.com';
+                }, 2000)
+            });
+</script>
+</body>
+</html>
